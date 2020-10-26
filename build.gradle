@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group 'de.dragonplayer'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.diozero:diozero-core:0.13'
+}
