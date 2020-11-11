@@ -1,9 +1,11 @@
 # Java-WS2801-LED-Controller
-Simple library for controlling WS2801 LED strips with Java based on diozero-core library
+Simple library for controlling WS2801 LED strips with Java based on diozero-core library.
 
 To diozero-core: https://www.diozero.com/
 
 ## Installation
+
+Simply download the JAR file from the latest version and add it to your project as well as the diozero-core library.
 
 ## Usage
 
@@ -16,9 +18,9 @@ public class LEDStripExample {
         // Initialize a LEDStrip object on SPI-Port 0 with 32 LEDs
         LEDStrip ledStrip = new LEDStrip(0, 32);
         
-        // Set a new Controller to the LED strip
-        // LEDControllerFlash is a default controller included in the library
-        ledStrip.setMode(new LEDControllerFlash());
+        // Set a new controller to the LED strip
+        // You can use own controllers or the default ones which are included in the library
+        ledStrip.setMode(new MyLEDController());
     }   
 }
 ````
@@ -45,6 +47,6 @@ How to deal with a LEDContainer object:
 
 ````
     ledContainer.clear(); // Disable all LEDs
-    ledContainer.fill(start, end, r, g, b); // Set all LEDs from index start to end to rgb values
-    ledContainer.modify(index, r, g, b); // Set a single LED to rgb values
+    ledContainer.fill(start, end, r, g, b); // Change multiple LEDs
+    ledContainer.modify(index, r, g, b); // Change a single LED
 ````

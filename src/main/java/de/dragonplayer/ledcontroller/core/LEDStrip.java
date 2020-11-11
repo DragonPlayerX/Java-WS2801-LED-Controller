@@ -13,7 +13,7 @@ public class LEDStrip {
     private final int spiPort;
     private final int ledAmount;
     private final SpiDevice spiDevice;
-    private final Timer timer;
+    private Timer timer;
     private LEDContainer ledContainer;
     private LEDController ledController;
 
@@ -28,6 +28,7 @@ public class LEDStrip {
     public void setMode(LEDController ledController) {
         this.ledController = ledController;
         timer.cancel();
+        timer = new Timer();
         write(ledContainer.clear());
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
